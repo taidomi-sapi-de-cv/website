@@ -6,12 +6,14 @@ import './App.css';
 
 import {Counter} from './Counter';
 import {Ping} from './Ping';
+import Landing from "./Landing/Landing.lazy";
 
 console.log('Trae', process.env)
 
 function App() {
   return (
     <div className="App">
+        <Landing/>
       <Counter />
       <Ping />
       <header className="App-header">
