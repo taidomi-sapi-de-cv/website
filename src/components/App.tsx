@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+
 import logo from '../logo.svg';
 import './App.css';
 
@@ -15,6 +17,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Ping />
+          <Button variant="contained">Hola</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload. MAS2
         </p>
