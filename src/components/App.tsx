@@ -12,6 +12,9 @@ import LandingPage from "../pages/LandingPage/LandingPage.lazy";
 import DashboardPage from "../pages/DashboardPage/DashboardPage.lazy";
 import Error404 from "./Error404/Error404.lazy";
 import Dashboard from "./Dashboard/Dashboard.lazy";
+import Wallet from "./Wallet/Wallet.lazy";
+import routes from "../config/routes";
+import RegisterUser from "./RegisterUser/RegisterUser.lazy";
 
 function App() {
     const isLogged = true;
@@ -19,9 +22,15 @@ function App() {
         <Router>
             <Routes>
                 <Route index element={<LandingPage/>}/>
-                <Route path='dashboard' element={isLogged ? <DashboardPage/> : <Login/>}>
+                <Route path={routes.authentication}>
+                    <Route index element={<Login/>}/>
+                    <Route path={routes.login} element={<Login/>}/>
+                    <Route path={routes.register} element={<RegisterUser/>}/>
+                </Route>
+                <Route path={routes.dashboard} element={isLogged ? <DashboardPage/> : <Login/>}>
                     <Route index element={<Dashboard/>}/>
-                    <Route path='me' element={<Profile/>}/>
+                    <Route path={routes.me} element={<Profile/>}/>
+                    <Route path={routes.wallet} element={<Wallet/>}/>
                     <Route path="*" element={<Error404/>}/>
                 </Route>
                 <Route path="*" element={<Error404/>}/>

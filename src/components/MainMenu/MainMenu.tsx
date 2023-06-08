@@ -10,6 +10,7 @@ const MainMenu: FC<MainMenuProps> = () => (
   <div data-testid="MainMenu">
       <AppBar position='static'>
           <Toolbar color='inherit'>
+              <Button color='inherit' component={NavLink} to={routes.wallet}>Mis Activos</Button>
               <Button color='inherit' component={NavLink} to={routes.me}>Perfil</Button>
               <Button color='inherit' component={NavLink} to={routes.home}>Salir</Button>
           </Toolbar>

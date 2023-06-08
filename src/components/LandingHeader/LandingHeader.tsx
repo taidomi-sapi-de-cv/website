@@ -11,7 +11,7 @@ const LandingHeader: FC<LandingHeaderProps> = () => (
     <div data-testid="LandingHeader">
         <AppBar position='static'>
             <Toolbar color='inherit'>
-                <Button color='inherit' component={NavLink} to={routes.dashboard}>Me</Button>
+                <Button color='inherit' component={NavLink} to={routes.login}>Login</Button>
             </Toolbar>
         </AppBar>
     </div>
