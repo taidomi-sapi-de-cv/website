@@ -16,6 +16,9 @@ import Wallet from "./Wallet/Wallet.lazy";
 import routes from "../config/routes";
 import RegisterUser from "./RegisterUser/RegisterUser.lazy";
 
+// https://www.robinwieruch.de/react-router-nested-routes/
+// https://reactrouter.com/en/main/route/lazy
+// https://codesandbox.io/s/react-router-emotion-mui-swr-axios-hyvq6?file=/src/components/stages/PersonForm/PersonForm.js
 function App() {
     const isLogged = true;
     return (

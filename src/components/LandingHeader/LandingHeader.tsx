@@ -12,6 +12,7 @@ const LandingHeader: FC<LandingHeaderProps> = () => (
         <AppBar position='static'>
             <Toolbar color='inherit'>
                 <Button color='inherit' component={NavLink} to={routes.login}>Login</Button>
+                <Button color='inherit' component={NavLink} to={routes.dashboard}>Dashboard</Button>
             </Toolbar>
         </AppBar>
     </div>
