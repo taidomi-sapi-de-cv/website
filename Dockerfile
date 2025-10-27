@@ -8,30 +8,10 @@ RUN yarn install --frozen-lockfile
 ARG REACT_APP_BACKEND_URL
 ENV REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
 
-COPY frontend/ .
+COPY ./ .
 RUN yarn build
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Crea la imagen que correra en el kubernete
 FROM nginx:1.27-alpine
 
 WORKDIR /app
