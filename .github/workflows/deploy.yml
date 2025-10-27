@@ -23,14 +23,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Configure kubeconfig
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        run: |
-          mkdir -p $HOME/.kube
-          echo "$KUBE_CONFIG_DATA" | base64 -d > $HOME/.kube/config ; chmod 600 $HOME/.kube/config
-          kubectl get pods 
-
       - name: Build and push image
         uses: docker/build-push-action@v5
         with:
@@ -51,12 +43,13 @@ jobs:
         with:
           version: '3.15.0'
 
-      #      - name: Configure kubeconfig
-      #        env:
-      #          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      #        run: |
-      #          mkdir -p $HOME/.kube
-      #          echo "$KUBE_CONFIG_DATA" | base64 -d > $HOME/.kube/config
+      - name: Configure kubeconfig
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        run: |
+          mkdir -p $HOME/.kube
+          echo "$KUBE_CONFIG_DATA" | base64 -d > $HOME/.kube/config ; chmod 600 $HOME/.kube/config
+          kubectl get pods 
 
       - name: Deploy with Helm
         run: |
