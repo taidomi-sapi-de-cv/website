@@ -12,8 +12,6 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
-      imagePullSecrets:
-        - name: ghcr-login
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
