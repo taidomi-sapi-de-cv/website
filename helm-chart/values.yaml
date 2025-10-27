@@ -1,0 +1,21 @@
+image:
+  repository: ghcr.io/taidomi-sapi-de-cv/website
+  tag: latest
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: ghcr-auth
+
+service:
+  type: ClusterIP
+  port: 8000
+  targetPort: 8000
+
+env:
+  REACT_APP_BACKEND_URL: "https://domitai.com/api"
+
+ingress:
+  enabled: true
+  host: domitai.com
+  tls: true
+  tlsSecret: domitai-tls-secret

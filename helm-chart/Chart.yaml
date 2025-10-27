@@ -1,0 +1,6 @@
+apiVersion: v2
+name: pagina-domitai
+version: 1.0.0
+description: React app with Nginx
+appVersion: "1.0.0"
+type: application
