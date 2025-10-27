@@ -11,6 +11,10 @@ service:
   port: 8000
   targetPort: 8000
 
+persistence:
+  enabled: false
+  claimName: json-storage-pvc
+
 env:
   REACT_APP_BACKEND_URL: "https://domitai.com/api"
 
