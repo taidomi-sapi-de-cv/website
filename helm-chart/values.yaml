@@ -17,6 +17,7 @@ persistence:
 
 env:
   REACT_APP_BACKEND_URL: "https://domitai.com/api"
+  NODE_ENV: "dev"
 
 ingress:
   enabled: true
