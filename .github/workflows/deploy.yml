@@ -20,15 +20,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.REGISTRY_PASS }}
 
-#      - name: Build and push image
-#        uses: docker/build-push-action@v5
-#        with:
-#          context: .
-#          push: true
-#          tags: ghcr.io/tiale/pagina-ahesa:${{ github.sha }}
-#          build-args: |
-#            REACT_APP_BACKEND_URL=https://ahesa.mx/v1
-#
+      - name: Build and push image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/domitai/website:${{ github.sha }}
+          build-args: |
+            REACT_APP_BACKEND_URL=https://domitai.com/v2
+
 #      - name: Set up kubectl
 #        uses: azure/setup-kubectl@v4
 #        with:
